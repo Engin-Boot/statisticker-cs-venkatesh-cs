@@ -12,11 +12,6 @@ namespace Statistics
     }
     public class StatsComputer
     {
-        public double average { get; set; }
-        public double max { get; set; }
-        public double min { get; set; }
-
-
         public Stats CalculateStatistics(List<double> numbers)
         {
             Stats stats = new Stats
@@ -26,12 +21,7 @@ namespace Statistics
                 max = GetMaxValue(numbers)
             };
 
-            average = GetAverage(numbers);
-            min = GetMinValue(numbers);
-            max = GetMaxValue(numbers);
-
             return stats;
-
         }
 
         private double GetAverage(List<double> numbers)
@@ -49,7 +39,6 @@ namespace Statistics
             if (numbers.Count == 0)
             {
                 return Double.NaN;
-
             }
             return numbers.Max();
         }
@@ -59,7 +48,6 @@ namespace Statistics
             if (numbers.Count == 0)
             {
                 return Double.NaN;
-
             }
             return numbers.Min();
         }
